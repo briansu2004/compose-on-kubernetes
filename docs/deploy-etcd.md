@@ -3,7 +3,9 @@
 ### Deploy etcd operator
 
 - Make sure the `compose` namespace exists on your cluster.
-- Run `helm repo add stable https://kubernetes-charts.storage.googleapis.com/` to add the repository where the etcd-operator is stored.
+#- Run `helm repo add stable https://kubernetes-charts.storage.googleapis.com/` to add the repository where the etcd-operator is stored.
+#Error: repo "https://kubernetes-charts.storage.googleapis.com/" is no longer available; try "https://charts.helm.sh/stable" instead
+- Run `helm repo add stable https://charts.helm.sh/stable` to add the repository where the etcd-operator is stored.
 - Run `helm install etcd-operator stable/etcd-operator --namespace compose` to install the etcd-operator chart.
 - Run `kubectl get pods --namespace compose` and check that etcd-operator containers were created and are in running state.
 ```
